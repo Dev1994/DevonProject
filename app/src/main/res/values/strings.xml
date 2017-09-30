@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Devon Project</string>
+    <string name="my_project">My Project</string>
+    <string name="final_semester">Final Semester</string>
+    <string name="trailer_hire">TRAILER HIRE</string>
+    <string name="pay_calculater">PAY CALCULATER</string>
+    <string name="my_option">MY OPTION</string>
+    <string name="trailer_hire_calculator">Trailer Hire Calculator</string>
+    <string name="enter_the_cost_per_km">Enter the cost per KM:</string>
+    <string name="e_g_8.00">e.g. 8.00</string>
+    <string name="enter_the_amount_of_kilometers_travelled">Enter the amount of kilometers travelled:</string>
+    <string name="e_g_36">e.g. 36</string>
+    <string name="calculate_costs">Calculate Costs</string>
+    <string name="enter_amount_in_dollars">Enter amount in dollars ($)</string>
+    <string name="currency_converter_r">Currency converter $ - R</string>
+    <string name="convert">Convert</string>
+</resources>
