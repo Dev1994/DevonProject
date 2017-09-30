@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
+    //Button that will open a new intent when clicked
     public void clickTrailer(View view) {
 
         /** An Intent is an object that provides runtime binding between separate components, such as
