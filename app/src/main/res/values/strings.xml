@@ -14,4 +14,6 @@
     <string name="enter_amount_in_dollars">Enter amount in dollars ($)</string>
     <string name="currency_converter_r">Currency converter $ - R</string>
     <string name="convert">Convert</string>
+    <string name="amount_due_for_distance_travelled">Amount due for distance travelled:</string>
+    <string name="_0_00">0.00</string>
 </resources>
