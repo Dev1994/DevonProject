@@ -47,8 +47,7 @@ public class TrailerHireActivity extends AppCompatActivity {
             Log.i("Info" , "TotalExtra = R" + totalExtra);
             Log.i("Info" , "Total if < 40km = R" + total);
 
-            String amDistString = new Double(amDist).toString();
-            txtDistResult.setText("R" + amDistString);
+            txtDistResult.setText(String.format("R" + "%.2f",amDist));
             Toast.makeText(this, "Total Amount Due After 5% surcharge and R300 daily fee added: R" + total, Toast.LENGTH_LONG).show();
 
         }else if (kmAmountNum > 200){
