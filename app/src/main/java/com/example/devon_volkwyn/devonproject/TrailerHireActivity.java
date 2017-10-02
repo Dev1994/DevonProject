@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TrailerHireActivity extends AppCompatActivity {
@@ -29,6 +30,8 @@ public class TrailerHireActivity extends AppCompatActivity {
         }
         int kmAmountNum = Integer.parseInt(kmAmount);
 
+        TextView txtDistResult = (TextView) findViewById(R.id.txtDistResult);
+
         // For testing purposes.
         Log.i("Info" , "Cost per km is R" + costKMNum);
         Log.i("Info" , "KM travelled = " + kmAmountNum);
@@ -38,13 +41,14 @@ public class TrailerHireActivity extends AppCompatActivity {
         if (kmAmountNum < 40){
 
             double amDist = total;
-            double totalExtra = (total*(5/100.%.2f));
+            double totalExtra = (total*(5/100));
             total = total + totalExtra + 300;
 
             Log.i("Info" , "TotalExtra = R" + totalExtra);
             Log.i("Info" , "Total if < 40km = R" + total);
 
-            Toast.makeText(this, "Amount due for distance travelled: R" + amDist, Toast.LENGTH_LONG).show();
+            String amDistString = new Double(amDist).toString();
+            txtDistResult.setText("R" + amDistString);
             Toast.makeText(this, "Total Amount Due After 5% surcharge and R300 daily fee added: R" + total, Toast.LENGTH_LONG).show();
 
         }else if (kmAmountNum > 200){
