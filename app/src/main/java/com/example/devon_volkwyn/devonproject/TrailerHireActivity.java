@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,10 @@ public class TrailerHireActivity extends AppCompatActivity {
         int kmAmountNum = Integer.parseInt(kmAmount);
 
         TextView txtDistResult = (TextView) findViewById(R.id.txtDistResult);
+        TextView txtTotal = (TextView) findViewById(R.id.txtTotal) ;
+        ImageView fivePercent = (ImageView) findViewById(R.id.fivePercent);
+        TextView viewExplanation = (TextView) findViewById(R.id.viewExplanation);
+        TextView viewExtra = (TextView) findViewById(R.id.viewExtra);
 
         // For testing purposes.
         Log.i("Info" , "Cost per km is R" + costKMNum);
@@ -41,14 +46,18 @@ public class TrailerHireActivity extends AppCompatActivity {
         if (kmAmountNum < 40){
 
             double amDist = total;
-            double totalExtra = (total*(5/100));
+            double totalExtra = 0.05 * total;
             total = total + totalExtra + 300;
 
             Log.i("Info" , "TotalExtra = R" + totalExtra);
             Log.i("Info" , "Total if < 40km = R" + total);
 
             txtDistResult.setText(String.format("R" + "%.2f",amDist));
-            Toast.makeText(this, "Total Amount Due After 5% surcharge and R300 daily fee added: R" + total, Toast.LENGTH_LONG).show();
+            txtTotal.setText(String.format("R" + "%.2f", total));
+            fivePercent.setVisibility(View.VISIBLE);
+            viewExplanation.setVisibility(View.VISIBLE);
+            viewExtra.setText(String.format("+ R" + "%.2f", totalExtra));
+            viewExtra.setVisibility(View.VISIBLE);
 
         }else if (kmAmountNum > 200){
 
