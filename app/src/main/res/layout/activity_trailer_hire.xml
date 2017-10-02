@@ -243,4 +243,17 @@
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/viewAddition" />
 
+    <ImageView
+        android:id="@+id/imgEleven"
+        android:layout_width="127dp"
+        android:layout_height="114dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/eleven"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtdistTravelled"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewTotal" />
+
 </android.support.constraint.ConstraintLayout>
