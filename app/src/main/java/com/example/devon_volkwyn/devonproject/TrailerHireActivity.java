@@ -36,6 +36,7 @@ public class TrailerHireActivity extends AppCompatActivity {
         ImageView fivePercent = (ImageView) findViewById(R.id.fivePercent);
         TextView viewExplanation = (TextView) findViewById(R.id.viewExplanation);
         TextView viewExtra = (TextView) findViewById(R.id.viewExtra);
+        ImageView imgEleven = (ImageView) findViewById(R.id.imgEleven);
 
         // For testing purposes.
         Log.i("Info" , "Cost per km is R" + costKMNum);
@@ -48,9 +49,6 @@ public class TrailerHireActivity extends AppCompatActivity {
             double amDist = total;
             double totalExtra = 0.05 * total;
             total = total + totalExtra + 300;
-
-            Log.i("Info" , "TotalExtra = R" + totalExtra);
-            Log.i("Info" , "Total if < 40km = R" + total);
 
             txtDistResult.setText(String.format("R" + "%.2f",amDist));
             txtTotal.setText(String.format("R" + "%.2f", total));
@@ -65,19 +63,20 @@ public class TrailerHireActivity extends AppCompatActivity {
             double totalExtra = (total*(11/100.%.2f));
             total = total - totalExtra + 300;
 
-            Log.i("Info" , "TotalExtra = R" + totalExtra);
-            Log.i("Info" , "Total if > 200km = R" + total);
-
-            Toast.makeText(this, "Amount due for distance travelled: R" + amDist, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Total Amount Due after 11% Discount and R300 daily fee added: R" + total, Toast.LENGTH_LONG).show();
+            txtDistResult.setText(String.format("R" + "%.2f",amDist));
+            txtTotal.setText(String.format("R" + "%.2f", total));
+            imgEleven.setVisibility(View.VISIBLE);
+            viewExplanation.setText("Travelled over 200km");
+            viewExplanation.setVisibility(View.VISIBLE);
+            viewExtra.setText(String.format("Discount R" + "%.2f", totalExtra));
+            viewExtra.setVisibility(View.VISIBLE);
 
         }else {
             double amDist = total;
             total = total +300;
-            Log.i("Info" , "Total if >= 40km && <= 200km = R" + total);
 
-            Toast.makeText(this, "Amount due for distance travelled: R" + amDist, Toast.LENGTH_LONG).show();
-            Toast.makeText(this, "Total Amount Due after R300 daily fee added: R" + total, Toast.LENGTH_LONG).show();
+            txtDistResult.setText(String.format("R" + "%.2f",amDist));
+            txtTotal.setText(String.format("R" + "%.2f", total));
 
         }
 
