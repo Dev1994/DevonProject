@@ -1,9 +1,12 @@
 package com.example.devon_volkwyn.devonproject;
 
+import android.content.Context;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -12,13 +15,16 @@ public class OptionActivity extends AppCompatActivity {
     public void clickConvert (View view){
 
         EditText txtNumber = (EditText) findViewById(R.id.txtNumber);
+        ConstraintLayout clsLay = (ConstraintLayout) findViewById(R.id.clsLay);
+
         Double dollAmountParsed = Double.parseDouble(txtNumber.getText().toString());
         Double randAmount = dollAmountParsed * 13.55;
 
         Toast.makeText(OptionActivity.this, "R" + String.format("%.2f", randAmount), Toast.LENGTH_LONG).show();
 
-        // For testing purposes
-        Log.i("Amount", txtNumber.getText().toString());
+        // Hide the keyboard from the screen when the button is clicked.
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(clsLay.getWindowToken(), 0);
 
     }
 
