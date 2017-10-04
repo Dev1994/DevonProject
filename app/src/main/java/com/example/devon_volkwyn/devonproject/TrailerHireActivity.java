@@ -1,9 +1,12 @@
 package com.example.devon_volkwyn.devonproject;
 
+import android.content.Context;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,6 +40,11 @@ public class TrailerHireActivity extends AppCompatActivity {
         TextView viewExplanation = (TextView) findViewById(R.id.viewExplanation);
         TextView viewExtra = (TextView) findViewById(R.id.viewExtra);
         ImageView imgEleven = (ImageView) findViewById(R.id.imgEleven);
+        ConstraintLayout cLay = (ConstraintLayout) findViewById(R.id.cLay);
+
+        // Hide the keyboard from the screen when the button is clicked.
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(cLay.getWindowToken(), 0);
 
         // For testing purposes.
         Log.i("Info" , "Cost per km is R" + costKMNum);
@@ -56,6 +64,7 @@ public class TrailerHireActivity extends AppCompatActivity {
             viewExplanation.setVisibility(View.VISIBLE);
             viewExtra.setText(String.format("+ R" + "%.2f", totalExtra));
             viewExtra.setVisibility(View.VISIBLE);
+            imgEleven.setVisibility(View.INVISIBLE);
 
         }else if (kmAmountNum > 200){
 
@@ -70,6 +79,7 @@ public class TrailerHireActivity extends AppCompatActivity {
             viewExplanation.setVisibility(View.VISIBLE);
             viewExtra.setText(String.format("Discount R" + "%.2f", totalExtra));
             viewExtra.setVisibility(View.VISIBLE);
+            fivePercent.setVisibility(View.INVISIBLE);
 
         }else {
             double amDist = total;
