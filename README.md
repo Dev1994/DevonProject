@@ -1,4 +1,4 @@
-# DevonProject
+﻿# DevonProject
 
 Students must develop an application using the Android environment. The application must have three buttons. The first button must be used to call a Trailer Hire function. The second button must be used to call the Pay Calculator function. The student must use the third button to implement any functionality of their choice. The application must be tested on the students’ allocated Android device before submission.
 
@@ -28,4 +28,14 @@ XYZ Company employees are paid a certain rate per hour. The company wants to mod
   
 Source: Pretorius & Erasmus (2012)
 Calculate the pay using the modified rate. Display the pay.
+
+
+
+
+
+
+
+
+
+
 
