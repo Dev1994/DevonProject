@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 public class TrailerHireActivity extends AppCompatActivity {
 
+    // Button method to update the costs when clicked.
     public void clickCalculate(View view){
 
         // Retrieve the cost per km and converting it to a number
@@ -34,6 +35,7 @@ public class TrailerHireActivity extends AppCompatActivity {
         }
         int kmAmountNum = Integer.parseInt(kmAmount);
 
+        //Retrieving all the information in the layout in order to be modified
         TextView txtDistResult = (TextView) findViewById(R.id.txtDistResult);
         TextView txtTotal = (TextView) findViewById(R.id.txtTotal) ;
         ImageView fivePercent = (ImageView) findViewById(R.id.fivePercent);
@@ -50,8 +52,10 @@ public class TrailerHireActivity extends AppCompatActivity {
         Log.i("Info" , "Cost per km is R" + costKMNum);
         Log.i("Info" , "KM travelled = " + kmAmountNum);
 
+        // Calculating the total cost for km travelled
         double total = kmAmountNum * costKMNum;
 
+        // Performing checks with an if statement in order to update the costs accordingly.
         if (kmAmountNum < 40){
 
             double amDist = total;

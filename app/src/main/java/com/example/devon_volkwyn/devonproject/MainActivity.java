@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    //Button that will open a new intent when clicked
     public void clickPay(View view) {
         /** An Intent is an object that provides runtime binding between separate components, such as
          *  two activities. The Intent represents an app’s "intent to do something."  */
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    //Button that will open a new intent when clicked
     public void clickOption(View view) {
         /** An Intent is an object that provides runtime binding between separate components, such as
          *  two activities. The Intent represents an app’s "intent to do something."  */
