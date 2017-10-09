@@ -35,12 +35,22 @@ public class TrailerHireActivity extends AppCompatActivity {
         }
         int kmAmountNum = Integer.parseInt(kmAmount);
 
+        // Retrieve the amount of days travelled and converting it to a number
+        EditText txtDays = (EditText) findViewById(R.id.txtDays);
+        String txtDaysString = txtDays.getText().toString();
+        if (txtDaysString.matches("")) {
+            Toast.makeText(this, "You did not enter the amount of days used!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int txtDaysInt = Integer.parseInt(txtDaysString);
+
         //Retrieving all the information in the layout in order to be modified
         TextView txtDistResult = (TextView) findViewById(R.id.txtDistResult);
         TextView txtTotal = (TextView) findViewById(R.id.txtTotal) ;
         ImageView fivePercent = (ImageView) findViewById(R.id.fivePercent);
         TextView viewExplanation = (TextView) findViewById(R.id.viewExplanation);
         TextView viewExtra = (TextView) findViewById(R.id.viewExtra);
+        TextView viewAddition = (TextView) findViewById(R.id.viewAddition);
         ImageView imgEleven = (ImageView) findViewById(R.id.imgEleven);
         ConstraintLayout cLay = (ConstraintLayout) findViewById(R.id.cLay);
 
@@ -54,13 +64,15 @@ public class TrailerHireActivity extends AppCompatActivity {
 
         // Calculating the total cost for km travelled
         double total = kmAmountNum * costKMNum;
+        int daysTotal = txtDaysInt * 300;
+        viewAddition.setText("+ " + txtDaysInt + " days used. Total = R" + daysTotal);
 
         // Performing checks with an if statement in order to update the costs accordingly.
         if (kmAmountNum < 40){
 
             double amDist = total;
             double totalExtra = 0.05 * total;
-            total = total + totalExtra + 300;
+            total = total + totalExtra + daysTotal;
 
             txtDistResult.setText(String.format("R" + "%.2f",amDist));
             txtTotal.setText(String.format("R" + "%.2f", total));
@@ -74,7 +86,7 @@ public class TrailerHireActivity extends AppCompatActivity {
 
             double amDist = total;
             double totalExtra = (total*(11/100.%.2f));
-            total = total - totalExtra + 300;
+            total = total - totalExtra + daysTotal;
 
             txtDistResult.setText(String.format("R" + "%.2f",amDist));
             txtTotal.setText(String.format("R" + "%.2f", total));
@@ -87,7 +99,7 @@ public class TrailerHireActivity extends AppCompatActivity {
 
         }else {
             double amDist = total;
-            total = total +300;
+            total = total + daysTotal;
 
             txtDistResult.setText(String.format("R" + "%.2f",amDist));
             txtTotal.setText(String.format("R" + "%.2f", total));

@@ -30,4 +30,5 @@
     <string name="enter_your_hourly_rate_in_rands">Enter your hourly rate in rands:</string>
     <string name="new_hourly_rate">New Hourly Rate</string>
     <string name="calculate">Calculate</string>
+    <string name="days_used">Days Used:</string>
 </resources>
